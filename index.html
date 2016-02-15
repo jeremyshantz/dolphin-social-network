@@ -1,0 +1,237 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Dolphin social network</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="scripts/cytoscape.js"></script>
+<script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
+<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.1.2/cytoscape-dagre.js"></script>
+<style>
+	body {
+		font-family: helvetica;
+		font-size: 14px;
+	}
+
+	#cy {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 999;
+	}
+
+	h1 {
+		opacity: 0.5;
+		font-size: 1em;
+	}
+</style>
+
+		<script>
+			$(function(){
+
+				var cy = window.cy = cytoscape({
+					container: document.getElementById('cy'),
+
+			          boxSelectionEnabled: false,
+			          autounselectify: true,
+
+					layout: {
+						name: 'dagre'
+					},
+
+					style: [
+						{
+							selector: 'node',
+							style: {
+								'content': 'data(id)',
+								'text-opacity': 0.5,
+								'text-valign': 'center',
+								'text-halign': 'right',
+								'background-color': '#11479e'
+							}
+						},
+
+						{
+							selector: 'edge',
+							style: {
+								'width': 4,
+								'target-arrow-shape': 'triangle',
+								'line-color': '#9dbaea',
+								'target-arrow-color': '#9dbaea',
+								 'label': 'encountered'
+							}
+						}
+					],
+
+					elements: {
+						nodes: [
+ 
+ { data: {number: 13, id: "Gallatin" } },
+ { data: {number: 14, id: "Grin" } },
+ { data: {number: 15, id: "Haecksel" } },
+ { data: {number: 16, id: "Hook" } },
+ { data: {number: 17, id: "Jet" } },
+ { data: {number: 18, id: "Jonah" } },
+ { data: {number: 19, id: "Knit" } },
+ { data: {number: 20, id: "Kringel" } },
+ { data: {number: 21, id: "MN105" } },
+ { data: {number: 22, id: "MN23" } },
+ { data: {number: 23, id: "MN60" } },
+ { data: {number: 24, id: "MN83" } },
+ { data: {number: 25, id: "Mus" } },
+ { data: {number: 26, id: "Notch" } },
+ { data: {number: 27, id: "Number1" } },
+ { data: {number: 28, id: "Oscar" } },
+ { data: {number: 29, id: "Patchback" } },
+ { data: {number: 30, id: "PL" } },
+ { data: {number: 31, id: "Quasi" } },
+ { data: {number: 33, id: "Scabs" } },
+ { data: {number: 34, id: "Shmuddel" } },
+ { data: {number: 35, id: "SMN5" } },
+ { data: {number: 36, id: "SN100" } },
+ { data: {number: 37, id: "SN4" } },
+ { data: {number: 38, id: "SN63" } },
+ { data: {number: 39, id: "SN89" } },
+ { data: {number: 40, id: "SN9" } },
+ { data: {number: 41, id: "SN90" } },
+ { data: {number: 42, id: "SN96" } },
+ { data: {number: 43, id: "Stripes" } },
+ { data: {number: 44, id: "Thumper" } },
+ { data: {number: 45, id: "Topless" } },
+ { data: {number: 47, id: "TR77" } },
+ { data: {number: 49, id: "TR88" } },
+ { data: {number: 50, id: "TR99" } },
+ { data: {number: 51, id: "Trigger" } },
+ { data: {number: 52, id: "TSN103" } },
+ { data: {number: 53, id: "TSN83" } },
+ { data: {number: 54, id: "Upbang" } },
+ { data: {number: 55, id: "Vau" } },
+ { data: {number: 57, id: "Web" } },
+ { data: {number: 58, id: "Whitetip" } },
+ { data: {number: 59, id: "Zap" } },
+ { data: {number: 60, id: "Zig" } },
+ { data: {number: 61, id: "Zipfel" } }	
+],
+edges: [
+ { data:{ source: "Hook",target: "Grin"    }},
+ { data:{ source: "Jet",target: "Gallatin"    }},
+ { data:{ source: "Jonah",target: "Haecksel"    }},
+ { data:{ source: "Kringel", target: "Hook"    }},
+ { data:{ source: "Kringel", target: "Jonah"    }},
+ { data:{ source: "MN105", target: "Jonah"    }},
+ { data:{ source: "MN23", target: "Jet"    }},
+ { data:{ source: "MN83", target: "Grin"    }},
+ { data:{ source: "MN83", target: "Haecksel"    }},
+ { data:{ source: "MN83", target: "Jonah"    }},
+ { data:{ source: "Mus", target: "Jet"    }},
+ { data:{ source: "Notch", target: "Mus"    }},
+ { data:{ source: "Number1", target: "Jet"    }},
+ { data:{ source: "Number1", target: "Mus"    }},
+ { data:{ source: "Number1", target: "Notch"    }},
+ { data:{ source: "Oscar", target: "Kringel"    }},
+ { data:{ source: "Patchback", target: "Jonah"    }},
+ { data:{ source: "Patchback", target: "MN105"    }},
+ { data:{ source: "Patchback", target: "MN83"    }},
+ { data:{ source: "PL", target: "Knit"    }},
+ { data:{ source: "PL", target: "Oscar"    }},
+ { data:{ source: "Quasi", target: "Jet"    }},
+ { data:{ source: "Quasi", target: "Gallatin"    }},
+ { data:{ source: "Scabs", target: "Grin"    }},
+ { data:{ source: "Scabs", target: "Hook"    }},
+ { data:{ source: "Scabs", target: "MN105"    }},
+ { data:{ source: "Shmuddel", target: "Grin"    }},
+ { data:{ source: "Shmuddel", target: "Scabs"    }},
+ { data:{ source: "SMN5", target: "Patchback"    }},
+ { data:{ source: "SN100", target: "Kringel"    }},
+ { data:{ source: "SN100", target: "MN60"    }},
+ { data:{ source: "SN4", target: "Grin"    }},
+ { data:{ source: "SN4", target: "Hook"    }},
+ { data:{ source: "SN4", target: "MN105"    }},
+ { data:{ source: "SN4", target: "Scabs"    }},
+ { data:{ source: "SN4", target: "Shmuddel"    }},
+ { data:{ source: "SN4", target: "SN100"    }},
+ { data:{ source: "SN63", target: "Grin"    }},
+ { data:{ source: "SN63", target: "Hook"    }},
+ { data:{ source: "SN63", target: "Kringel"    }},
+ { data:{ source: "SN63", target: "Scabs"    }},
+ { data:{ source: "SN89", target: "SN100"    }},
+ { data:{ source: "SN9", target: "Grin"    }},
+ { data:{ source: "SN9", target: "Haecksel"    }},
+ { data:{ source: "SN9", target: "Scabs"    }},
+ { data:{ source: "SN9", target: "SN100"    }},
+ { data:{ source: "SN9", target: "SN4"    }},
+ { data:{ source: "SN90", target: "Gallatin"    }},
+ { data:{ source: "SN96", target: "PL"    }},
+ { data:{ source: "Stripes", target: "Grin"    }},
+ { data:{ source: "Stripes", target: "Patchback"    }},
+ { data:{ source: "Stripes", target: "Scabs"    }},
+ { data:{ source: "Stripes", target: "SN4"    }},
+ { data:{ source: "Stripes", target: "SN63"    }},
+ { data:{ source: "Thumper", target: "Kringel"    }},
+ { data:{ source: "Thumper", target: "Shmuddel"    }},
+ { data:{ source: "Thumper", target: "SN63"    }},
+ { data:{ source: "Topless", target: "Haecksel"    }},
+ { data:{ source: "Topless", target: "Jonah"    }},
+ { data:{ source: "Topless", target: "MN105"    }},
+ { data:{ source: "Topless", target: "MN60"    }},
+ { data:{ source: "Topless", target: "MN83"    }},
+ { data:{ source: "Topless", target: "Patchback"    }},
+ { data:{ source: "Topless", target: "SN4"    }},
+ { data:{ source: "TR77", target: "Kringel"    }},
+ { data:{ source: "TR77", target: "Oscar"    }},
+ { data:{ source: "TR77", target: "PL"    }},
+ { data:{ source: "TR77", target: "SN96"    }},
+ { data:{ source: "TR88", target: "Shmuddel"    }},
+ { data:{ source: "TR99", target: "Grin"    }},
+ { data:{ source: "TR99", target: "Hook"    }},
+ { data:{ source: "TR99", target: "Kringel"    }},
+ { data:{ source: "TR99", target: "Scabs"    }},
+ { data:{ source: "TR99", target: "SN96"    }},
+ { data:{ source: "TR99", target: "Topless"    }},
+ { data:{ source: "Trigger", target: "Jonah"    }},
+ { data:{ source: "Trigger", target: "MN105"    }},
+ { data:{ source: "Trigger", target: "MN60"    }},
+ { data:{ source: "Trigger", target: "MN83"    }},
+ { data:{ source: "Trigger", target: "Patchback"    }},
+ { data:{ source: "Trigger", target: "Topless"    }},
+ { data:{ source: "Trigger", target: "TR99"    }},
+ { data:{ source: "TSN103", target: "Grin"    }},
+ { data:{ source: "TSN103", target: "Patchback"    }},
+ { data:{ source: "TSN103", target: "SN63"    }},
+ { data:{ source: "TSN103", target: "SN9"    }},
+ { data:{ source: "TSN83", target: "Stripes"    }},
+ { data:{ source: "Upbang", target: "Gallatin"    }},
+ { data:{ source: "Upbang", target: "Knit"    }},
+ { data:{ source: "Upbang", target: "SN90"    }},
+ { data:{ source: "Vau", target: "Haecksel"    }},
+ { data:{ source: "Vau", target: "Trigger"    }},
+ { data:{ source: "Web", target: "Gallatin"    }},
+ { data:{ source: "Web", target: "Jet"    }},
+ { data:{ source: "Web", target: "SN89"    }},
+ { data:{ source: "Web", target: "SN90"    }},
+ { data:{ source: "Web", target: "Upbang"    }},
+ { data:{ source: "Whitetip", target: "SN63"    }},
+ { data:{ source: "Zap", target: "Haecksel"    }},
+ { data:{ source: "Zap", target: "SN100"    }},
+ { data:{ source: "Zap", target: "Topless"    }},
+ { data:{ source: "Zig", target: "Quasi"    }},
+ { data:{ source: "Zipfel", target: "SN4"    }},
+ { data:{ source: "Zipfel", target: "TSN83    "}}
+	]
+},
+});
+});
+</script>
+</head>
+
+<body>
+	<h1>Dolphin social network</h1>
+	<div style="font-size:2pt;">
+		Dolphin social network: an undirected social network of frequent associations between 62 dolphins in a community living off Doubtful Sound, New Zealand. Please cite D. Lusseau, K. Schneider, O. J. Boisseau, P. Haase, E. Slooten, and S. M. Dawson, Behavioral Ecology and Sociobiology 54, 396-405 (2003). Thanks to David Lusseau for permission to post these data on this web site. 
+		<a href="http://www-personal.umich.edu/~mejn/netdata/">http://www-personal.umich.edu/~mejn/netdata/</a>
+	</div>
+	<div id="cy"></div>
+</body>
+</html>
